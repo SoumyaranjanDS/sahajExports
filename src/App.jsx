@@ -66,7 +66,7 @@ function App() {
       </main>
 
       <Footer />
-      <Agentation />
+      {/* <Agentation /> */}
     </div>
   );
 }
