@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail, ChevronRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -61,12 +62,24 @@ const Footer = () => {
           >
             <h3 className="text-2xl font-heading font-bold text-white mb-8">Quick Links</h3>
             <ul className="space-y-4">
-              {['Home', 'About Us', 'Products', 'Contact Us'].map((link) => (
-                <li key={link}>
-                  <a href={`#${link.toLowerCase().replace(' ', '-')}`} className="flex items-center text-white/70 hover:text-accent transition-colors font-body group">
-                    <ChevronRight size={16} className="text-accent mr-2 transform group-hover:translate-x-1 transition-transform" />
-                    {link}
-                  </a>
+              {[
+                { name: 'Home', path: '/' }, 
+                { name: 'About Us', path: '/about-us' }, 
+                { name: 'Products', path: '/#products' }, 
+                { name: 'Contact Us', path: '/contact' }
+              ].map((link) => (
+                <li key={link.name}>
+                  {link.path.startsWith('/#') ? (
+                    <a href={link.path} className="flex items-center text-white/70 hover:text-accent transition-colors font-body group">
+                      <ChevronRight size={16} className="text-accent mr-2 transform group-hover:translate-x-1 transition-transform" />
+                      {link.name}
+                    </a>
+                  ) : (
+                    <Link to={link.path} className="flex items-center text-white/70 hover:text-accent transition-colors font-body group">
+                      <ChevronRight size={16} className="text-accent mr-2 transform group-hover:translate-x-1 transition-transform" />
+                      {link.name}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
