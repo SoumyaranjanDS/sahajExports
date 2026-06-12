@@ -7,14 +7,13 @@ import { catalog } from '../data/catalog';
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isProductsHovered, setIsProductsHovered] = useState(false);
-  const [activeCategory, setActiveCategory] = useState(catalog[0]); // Default to first category
+  const [activeCategory, setActiveCategory] = useState(catalog[0]);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [expandedMobileCategory, setExpandedMobileCategory] = useState(null);
   const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
-      // Switch colors when scrolling down
       if (window.scrollY > 80) {
         setIsScrolled(true);
       } else {
@@ -26,16 +25,21 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu on route change
   useEffect(() => {
     setIsMobileMenuOpen(false);
   }, [location.pathname]);
 
-  // Force scrolled state on non-home pages so text is visible on light backgrounds
   const isHome = location.pathname === '/';
-  const headerStyle = (isScrolled || !isHome || isMobileMenuOpen)
-    ? 'bg-primary-dark shadow-md border-b border-white/10' 
+  const isSolid = isScrolled || !isHome || isMobileMenuOpen;
+  
+  // Clean, modern white glassmorphism navbar when solid
+  const headerStyle = isSolid
+    ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100' 
     : 'bg-transparent';
+
+  // Dynamic text colors based on background
+  const textColor = isSolid ? 'text-primary-dark' : 'text-white/90';
+  const hoverTextColor = isSolid ? 'hover:text-accent' : 'hover:text-white';
 
   const navLinks = [
     { name: 'About Us', path: '/about-us' },
@@ -54,13 +58,12 @@ const Header = () => {
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 lg:px-16 py-4">
           
           {/* Logo Area */}
-          <Link to="/" className="flex items-center gap-2 group z-50">
-            <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center transition-transform group-hover:scale-110 shadow-lg">
-              <span className="text-white font-bold text-sm font-heading">SE</span>
-            </div>
-            <span className="text-white font-heading font-bold text-xl tracking-wide">
-              Sahaj Exports
-            </span>
+          <Link to="/" className="flex items-center group z-50">
+            <img 
+              src="/Sahaj-Exports-Final-Logo.webp" 
+              alt="Sahaj Exports" 
+              className="h-10 md:h-14 w-auto transition-transform group-hover:scale-105" 
+            />
           </Link>
 
           {/* Desktop Nav */}
@@ -68,7 +71,7 @@ const Header = () => {
             
             <Link 
               to="/"
-              className="text-white/90 hover:text-white text-sm font-medium transition-colors font-body relative group"
+              className={`${textColor} ${hoverTextColor} text-sm font-bold transition-colors font-body relative group`}
             >
               Home
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
@@ -80,7 +83,7 @@ const Header = () => {
               onMouseEnter={() => setIsProductsHovered(true)}
               onMouseLeave={() => setIsProductsHovered(false)}
             >
-              <button className="flex items-center gap-1 text-white/90 hover:text-white text-sm font-medium transition-colors font-body py-2 group">
+              <button className={`flex items-center gap-1 ${textColor} ${hoverTextColor} text-sm font-bold transition-colors font-body py-2 group`}>
                 Products 
                 <motion.div animate={{ rotate: isProductsHovered ? 180 : 0 }}>
                   <ChevronDown size={16} />
@@ -151,7 +154,7 @@ const Header = () => {
               <Link 
                 key={link.name} 
                 to={link.path}
-                className="text-white/90 hover:text-white text-sm font-medium transition-colors font-body relative group"
+                className={`${textColor} ${hoverTextColor} text-sm font-bold transition-colors font-body relative group`}
               >
                 {link.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
@@ -173,7 +176,7 @@ const Header = () => {
 
           {/* Mobile Menu Toggle Button */}
           <button 
-            className="md:hidden text-white hover:text-accent transition-colors z-50"
+            className={`md:hidden ${isSolid ? 'text-primary-dark' : 'text-white'} hover:text-accent transition-colors z-50`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -190,20 +193,20 @@ const Header = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-primary-dark pt-32 px-6 overflow-y-auto pb-12 md:hidden"
+            className="fixed inset-0 z-40 bg-white pt-32 px-6 overflow-y-auto pb-12 md:hidden"
           >
             <div className="flex flex-col gap-6">
-              <Link to="/" className="text-2xl font-heading font-bold text-white/90 hover:text-white">Home</Link>
+              <Link to="/" className="text-2xl font-heading font-bold text-primary-dark hover:text-accent">Home</Link>
               
               {/* Mobile Products Accordion */}
-              <div className="border-y border-white/10 py-4">
+              <div className="border-y border-gray-100 py-4">
                 <span className="text-sm font-bold text-accent uppercase tracking-wider mb-4 block font-body">Our Products</span>
                 <div className="flex flex-col gap-4 pl-2">
                   {catalog.map((cat, idx) => (
                     <div key={idx}>
                       <button 
                         onClick={() => setExpandedMobileCategory(expandedMobileCategory === cat.category ? null : cat.category)}
-                        className="flex items-center justify-between w-full text-xl font-heading font-bold text-white/80 hover:text-white transition-colors"
+                        className="flex items-center justify-between w-full text-xl font-heading font-bold text-primary-dark hover:text-accent transition-colors"
                       >
                         {cat.category}
                         <ChevronDown size={20} className={`transition-transform duration-300 ${expandedMobileCategory === cat.category ? 'rotate-180 text-accent' : ''}`} />
@@ -222,7 +225,7 @@ const Header = () => {
                                 <Link 
                                   key={product.id}
                                   to={`/product/${product.id}`}
-                                  className="text-white/60 hover:text-accent text-lg font-body transition-colors"
+                                  className="text-gray-500 hover:text-accent text-lg font-body transition-colors"
                                 >
                                   {product.name}
                                 </Link>
@@ -240,7 +243,7 @@ const Header = () => {
                 <Link 
                   key={link.name} 
                   to={link.path}
-                  className="text-2xl font-heading font-bold text-white/90 hover:text-white"
+                  className="text-2xl font-heading font-bold text-primary-dark hover:text-accent"
                 >
                   {link.name}
                 </Link>

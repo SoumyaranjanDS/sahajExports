@@ -75,7 +75,7 @@ const FAQ = () => {
                   <h3 className={`text-xl font-heading font-bold pr-8 transition-colors duration-300 ${isActive ? 'text-accent' : 'text-primary-dark group-hover:text-accent'}`}>
                     {faq.question}
                   </h3>
-                  <div className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${isActive ? 'bg-accent text-white rotate-180' : 'bg-gray-100 text-gray-500 group-hover:bg-accent/10 group-hover:text-accent'}`}>
+                  <div className={`shrink-0 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 ${isActive ? 'bg-accent text-white rotate-180' : 'bg-gray-100 text-gray-500 group-hover:bg-accent/10 group-hover:text-accent'}`}>
                     {isActive ? <Minus size={20} /> : <Plus size={20} />}
                   </div>
                 </button>

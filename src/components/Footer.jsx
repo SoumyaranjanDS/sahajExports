@@ -24,17 +24,11 @@ const Footer = () => {
           >
             {/* Logo */}
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center">
-                <span className="text-white font-bold text-lg font-heading">SE</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-white font-heading font-bold text-2xl leading-none tracking-wide">
-                  SAHAJ
-                </span>
-                <span className="text-accent font-heading font-semibold text-sm tracking-[0.2em] leading-none mt-1">
-                  EXPORTS
-                </span>
-              </div>
+              <img 
+                src="/Sahaj-Exports-Final-Logo.webp" 
+                alt="Sahaj Exports Logo" 
+                className="h-12 md:h-16 w-auto bg-white py-2 px-4 rounded-xl shadow-lg" 
+              />
             </div>
             
             <p className="text-white/70 font-body leading-relaxed mb-8 max-w-sm">

@@ -3,11 +3,11 @@ import { motion } from 'framer-motion';
 
 const WhySahaj = () => {
   return (
-    <section className="relative bg-gradient-to-br from-white via-[#F9FAFB] to-[#F0FDF4] py-24 md:py-32 px-6 md:px-16 lg:px-24 overflow-hidden" id="why-sahaj">
+    <section className="relative bg-linear-to-br from-white via-[#F9FAFB] to-[#F0FDF4] py-24 md:py-32 px-6 md:px-16 lg:px-24 overflow-hidden" id="why-sahaj">
       
-      {/* Premium Gradient Background Blobs */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-accent/10 to-transparent rounded-full blur-[100px] pointer-events-none"></div>
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-[#EAB308]/10 to-transparent rounded-full blur-[100px] pointer-events-none"></div>
+      {/* Premium linear Background Blobs */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-linear-to-bl from-accent/10 to-transparent rounded-full blur-[100px] pointer-events-none"></div>
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-linear-to-tr from-[#EAB308]/10 to-transparent rounded-full blur-[100px] pointer-events-none"></div>
 
       <div className="max-w-[1400px] mx-auto relative z-10">
         
@@ -85,9 +85,9 @@ const WhySahaj = () => {
                 alt="Authentic Indian Farmer in a Field" 
                 className="w-full h-auto object-cover max-h-[600px] group-hover:scale-105 transition-transform duration-1000"
               />
-              {/* Rich multi-stop gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A]/50 via-transparent to-transparent pointer-events-none"></div>
-              <div className="absolute inset-0 bg-gradient-to-tr from-accent/20 to-transparent mix-blend-overlay pointer-events-none"></div>
+              {/* Rich multi-stop linear overlay */}
+              <div className="absolute inset-0 bg-linear-to-t from-[#1A1A1A]/50 via-transparent to-transparent pointer-events-none"></div>
+              <div className="absolute inset-0 bg-linear-to-tr from-accent/20 to-transparent mix-blend-overlay pointer-events-none"></div>
             </div>
           </motion.div>
 
