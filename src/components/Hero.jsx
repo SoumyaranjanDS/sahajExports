@@ -72,22 +72,26 @@ const Hero = () => {
 
           {/* Action Buttons */}
           <motion.div variants={itemVariants} className="flex flex-wrap items-center justify-center gap-4">
-            <motion.button 
+            <motion.a 
+              href="#products"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-accent text-white px-8 py-4 rounded-full font-bold font-body flex items-center gap-2 group hover:bg-opacity-90 shadow-lg"
+              className="bg-accent text-white px-8 py-4 rounded-full font-bold font-body flex items-center gap-2 group hover:bg-opacity-90 shadow-lg cursor-pointer"
             >
               View Product Catalog
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-            </motion.button>
+            </motion.a>
             
-            <motion.button 
+            <motion.a 
+              href="https://wa.me/918618776540"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-transparent border border-white/30 text-white px-8 py-4 rounded-full font-bold font-body hover:bg-white/10 backdrop-blur-sm transition-all"
+              className="bg-transparent border border-white/30 text-white px-8 py-4 rounded-full font-bold font-body hover:bg-white/10 backdrop-blur-sm transition-all cursor-pointer"
             >
               Get Wholesale Pricing
-            </motion.button>
+            </motion.a>
           </motion.div>
         </motion.div>
       </div>

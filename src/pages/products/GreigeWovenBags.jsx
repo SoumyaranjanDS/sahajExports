@@ -259,7 +259,9 @@ const GreigeWovenBags = () => {
                           whileHover={{ scale: 1.02 }}
                           className={`${sizeClass} rounded-full shadow-2xl shadow-accent/40`}
                           style={{
-                            background: 'radial-gradient(circle at 30% 30%, #5eead4 0%, #2A9D8F 45%, #115e59 100%)'
+                            backgroundColor: '#2A9D8F',
+                            backgroundImage: 'radial-gradient(circle at 30% 30%, #5eead4 0%, #2A9D8F 45%, #115e59 100%)',
+                            WebkitBackgroundImage: '-webkit-radial-gradient(30% 30%, circle, #5eead4 0%, #2A9D8F 45%, #115e59 100%)'
                           }}
                         ></motion.div>
                       </div>
@@ -270,7 +272,9 @@ const GreigeWovenBags = () => {
                         <motion.div 
                           className={`${sizeClass} rounded-full shadow-2xl shadow-accent/40 shrink-0 z-10`}
                           style={{
-                            background: 'radial-gradient(circle at 30% 30%, #5eead4 0%, #2A9D8F 45%, #115e59 100%)'
+                            backgroundColor: '#2A9D8F',
+                            backgroundImage: 'radial-gradient(circle at 30% 30%, #5eead4 0%, #2A9D8F 45%, #115e59 100%)',
+                            WebkitBackgroundImage: '-webkit-radial-gradient(30% 30%, circle, #5eead4 0%, #2A9D8F 45%, #115e59 100%)'
                           }}
                         ></motion.div>
                         
