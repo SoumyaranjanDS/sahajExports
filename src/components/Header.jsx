@@ -32,9 +32,9 @@ const Header = () => {
   const isHome = location.pathname === '/';
   const isSolid = isScrolled || !isHome || isMobileMenuOpen;
   
-  // Clean, modern white glassmorphism navbar when solid
+  // Clean, modern glassmorphism navbar when solid
   const headerStyle = isSolid
-    ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100' 
+    ? 'bg-white/40 backdrop-blur-lg shadow-sm border-b border-white/40' 
     : 'bg-transparent';
 
   // Dynamic text colors based on background
@@ -55,14 +55,14 @@ const Header = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${headerStyle}`}
       >
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 lg:px-16 py-4">
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 lg:px-16 py-2">
           
           {/* Logo Area */}
           <Link to="/" className="flex items-center group z-50">
             <img 
               src="/Sahaj-Exports-Final-Logo.webp" 
               alt="Sahaj Exports" 
-              className="h-10 md:h-14 w-auto transition-transform group-hover:scale-105" 
+              className="h-8 md:h-10 w-auto transition-transform group-hover:scale-105" 
             />
           </Link>
 
@@ -163,7 +163,7 @@ const Header = () => {
           </nav>
 
           <div className="hidden md:block">
-            <Link to="/contact">
+            <a href="https://wa.me/918618776540" target="_blank" rel="noreferrer">
               <motion.button 
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -171,7 +171,7 @@ const Header = () => {
               >
                 Get a Quote
               </motion.button>
-            </Link>
+            </a>
           </div>
 
           {/* Mobile Menu Toggle Button */}
@@ -249,11 +249,11 @@ const Header = () => {
                 </Link>
               ))}
 
-              <Link to="/contact" className="mt-8">
+              <a href="https://wa.me/918618776540" target="_blank" rel="noreferrer" className="mt-8">
                 <button className="w-full py-4 rounded-xl text-lg font-bold font-body transition-all shadow-md bg-accent text-white hover:bg-opacity-90">
                   Get a Quote
                 </button>
-              </Link>
+              </a>
             </div>
           </motion.div>
         )}

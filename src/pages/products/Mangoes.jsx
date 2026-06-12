@@ -93,10 +93,12 @@ const Mangoes = () => {
             <p className="text-xl text-primary-dark/80 font-body leading-relaxed mb-10 max-w-lg">
               {product.description}
             </p>
-            <button className="px-8 py-4 rounded-full font-bold text-lg font-body transition-all shadow-xl shadow-accent/20 bg-accent text-white hover:bg-opacity-90 hover:scale-105 active:scale-95 flex items-center gap-2 group w-max">
-              Request a Quote
-              <ChevronRight size={20} className="transition-transform group-hover:translate-x-1" />
-            </button>
+            <a href="https://wa.me/918618776540" target="_blank" rel="noreferrer" className="w-max inline-block">
+              <button className="px-8 py-4 rounded-full font-bold text-lg font-body transition-all shadow-xl shadow-accent/20 bg-accent text-white hover:bg-opacity-90 hover:scale-105 active:scale-95 flex items-center gap-2 group w-max">
+                Request a Quote
+                <ChevronRight size={20} className="transition-transform group-hover:translate-x-1" />
+              </button>
+            </a>
           </motion.div>
         </div>
       </div>

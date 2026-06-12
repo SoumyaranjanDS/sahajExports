@@ -58,10 +58,10 @@ const FishFood = () => {
         ></div>
         
         {/* linear Mask fading from background-color on left to transparent on right */}
-        <div className="absolute inset-0 z-10 bg-linear-to-r from-[#F7F5EE] via-[#F7F5EE]/95 md:via-[#F7F5EE]/80 to-transparent"></div>
+        <div className="absolute inset-0 z-10 bg-gradient-to-r from-[#F7F5EE] via-[#F7F5EE]/95 md:via-[#F7F5EE]/80 to-transparent"></div>
         {/* Top/Bottom linear fades to blend seamlessly with the rest of the page */}
-        <div className="absolute inset-x-0 bottom-0 h-40 z-10 bg-linear-to-t from-[#F7F5EE] to-transparent"></div>
-        <div className="absolute inset-x-0 top-0 h-32 z-10 bg-linear-to-b from-[#F7F5EE] to-transparent"></div>
+        <div className="absolute inset-x-0 bottom-0 h-40 z-10 bg-gradient-to-t from-[#F7F5EE] to-transparent"></div>
+        <div className="absolute inset-x-0 top-0 h-32 z-10 bg-gradient-to-b from-[#F7F5EE] to-transparent"></div>
 
         {/* Content Container aligned with the rest of the page grid */}
         <div className="relative z-20 w-full max-w-6xl mx-auto px-6 md:px-12 lg:px-16 pt-24 h-full flex flex-col justify-center">
@@ -87,10 +87,12 @@ const FishFood = () => {
             <p className="text-xl text-primary-dark/80 font-body leading-relaxed mb-10 max-w-lg">
               {product.description}
             </p>
-            <button className="px-8 py-4 rounded-full font-bold text-lg font-body transition-all shadow-xl shadow-accent/20 bg-accent text-white hover:bg-opacity-90 hover:scale-105 active:scale-95 flex items-center gap-2 group w-max">
-              Request a Quote
-              <ChevronRight size={20} className="transition-transform group-hover:translate-x-1" />
-            </button>
+            <a href="https://wa.me/918618776540" target="_blank" rel="noreferrer" className="w-max inline-block">
+              <button className="px-8 py-4 rounded-full font-bold text-lg font-body transition-all shadow-xl shadow-accent/20 bg-accent text-white hover:bg-opacity-90 hover:scale-105 active:scale-95 flex items-center gap-2 group w-max">
+                Request a Quote
+                <ChevronRight size={20} className="transition-transform group-hover:translate-x-1" />
+              </button>
+            </a>
           </motion.div>
         </div>
       </div>
@@ -177,7 +179,7 @@ const FishFood = () => {
                         width: `${barWidth}%`,
                       }}
                     >
-                      <div className="absolute inset-0 bg-linear-to-r from-accent to-accent/0 opacity-90 rounded-r-sm"></div>
+                      <div className="absolute inset-0 bg-gradient-to-r from-accent to-accent/0 opacity-90 rounded-r-sm"></div>
                     </div>
                     
                     {/* Value (Right Text placed immediately after the bar) */}
@@ -254,7 +256,7 @@ const FishFood = () => {
                         <motion.div 
                           className={`${sizeClass} rounded-full shadow-2xl shadow-accent/40 shrink-0 z-10`}
                           style={{
-                            background: 'radial-linear(circle at 30% 30%, #5eead4 0%, #2A9D8F 45%, #115e59 100%)'
+                            background: 'radial-gradient(circle at 30% 30%, #5eead4 0%, #2A9D8F 45%, #115e59 100%)'
                           }}
                         ></motion.div>
                         
