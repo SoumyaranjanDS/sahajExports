@@ -22,3 +22,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Project specifics
+.env
+cloudinary_urls.json
+optimizeUrls.js
+updateImageUrls.js
+uploadImages.js
+public/products/

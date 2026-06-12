@@ -51,9 +51,7 @@ const FishFood = () => {
         <div 
           className="absolute inset-0 z-0 bg-cover bg-center md:bg-right"
           style={{ 
-            backgroundImage: product.name.toLowerCase() === 'fish meal' 
-              ? `url('/fish meal.png')` 
-              : `url('https://source.unsplash.com/1600x900/?${encodeURIComponent(product.name.split(' ')[0])},agriculture,export')`
+            backgroundImage: `url('https://res.cloudinary.com/dvdd218yw/image/upload/f_auto,q_auto,w_1920/v1781262418/sahaj/products/fish/fish_meal.png')`
           }}
         ></div>
         

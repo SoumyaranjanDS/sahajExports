@@ -59,7 +59,7 @@ const Mangoes = () => {
         <div 
           className="absolute inset-0 z-0 bg-cover bg-center md:bg-right"
           style={{ 
-            backgroundImage: `url('https://source.unsplash.com/1600x900/?mango,fruit,farm')`
+            backgroundImage: `url('https://res.cloudinary.com/dvdd218yw/image/upload/f_auto,q_auto,w_1920/v1781262400/sahaj/products/agro/Farm_Fresh_Mango.png')`
           }}
         ></div>
         
