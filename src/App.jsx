@@ -34,12 +34,7 @@ const GreigeFabric = lazy(() => import('./pages/products/GreigeFabric'));
 const GreigeWovenBags = lazy(() => import('./pages/products/GreigeWovenBags'));
 const KnittedFabrics = lazy(() => import('./pages/products/KnittedFabrics'));
 
-// Fallback loader component displayed while page chunks are downloading
-const PageLoader = () => (
-  <div className="flex items-center justify-center min-h-[70vh]">
-    <div className="w-12 h-12 border-4 border-primary-light border-t-accent rounded-full animate-spin"></div>
-  </div>
-);
+import PageLoader from './components/PageLoader';
 
 function App() {
   return (
