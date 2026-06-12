@@ -49,13 +49,10 @@ const Header = () => {
 
   return (
     <>
-      <motion.header 
-        initial={{ y: -100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+      <header 
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${headerStyle}`}
       >
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 lg:px-16 py-2">
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 lg:px-16 py-5">
           
           {/* Logo Area */}
           <Link to="/" className="flex items-center group z-50">
@@ -183,7 +180,7 @@ const Header = () => {
           </button>
 
         </div>
-      </motion.header>
+      </header>
 
       {/* Full Screen Mobile Menu overlay */}
       <AnimatePresence>

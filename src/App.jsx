@@ -5,13 +5,14 @@ import Footer from './components/Footer';
 import { Agentation } from 'agentation';
 import './App.css';
 
-// Lazy load pages to improve initial bundle speed
+import PageLoader from './components/PageLoader';
+
+// Lazy load pages
 const Home = lazy(() => import('./pages/Home'));
 const AboutUs = lazy(() => import('./pages/AboutUs'));
 const CertificationsPage = lazy(() => import('./pages/CertificationsPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
 
-// Lazy load product pages
 const FishFood = lazy(() => import('./pages/products/FishFood'));
 const Mangoes = lazy(() => import('./pages/products/Mangoes'));
 const Peanuts = lazy(() => import('./pages/products/Peanuts'));
@@ -34,14 +35,12 @@ const GreigeFabric = lazy(() => import('./pages/products/GreigeFabric'));
 const GreigeWovenBags = lazy(() => import('./pages/products/GreigeWovenBags'));
 const KnittedFabrics = lazy(() => import('./pages/products/KnittedFabrics'));
 
-import PageLoader from './components/PageLoader';
-
 function App() {
   return (
     <div className="bg-bg-main min-h-screen flex flex-col">
       <Header />
       
-      <main className="grow">
+      <main className="grow relative">
         <Suspense fallback={<PageLoader />}>
           <Routes>
             <Route path="/" element={<Home />} />
